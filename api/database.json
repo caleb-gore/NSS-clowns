@@ -10,6 +10,28 @@
       "id": 1
     }
   ],
-  "clowns": [],
-  "completions": []
+  "clowns": [
+    {
+      "id": 1,
+      "name": "Buttons"
+    },
+    {
+      "id": 2,
+      "name": "Lollipop"
+    }
+  ],
+  "completions": [
+    {
+      "reservationId": 1,
+      "clownId": 1,
+      "date_created": 1652761269958,
+      "id": 1
+    },
+    {
+      "reservationId": 1,
+      "clownId": 2,
+      "date_created": 1652761299408,
+      "id": 2
+    }
+  ]
 }

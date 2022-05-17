@@ -6,14 +6,19 @@ const mainContainer = document.querySelector('#container')
 export const Reservations = () => {
     const requests = getRequests()
     const clowns = getClowns()
-    let html = `<h1>Reservations</h1>
-    <ul>
+    let html = `
+    <div class="container">
+    <h1>Reservations</h1>
+    <ul class="list-group list-group-flush">
         ${requests.map((reservation) => {
         return `
-        <li>
+        <li class="list-group-item">
+            <div class="row">
+            <div class="col-md-auto">
             ${reservation.parentName} reserved a ${reservation.length} hour appearance on ${reservation.date}
-            
-            <select class="clowns" id="clowns">
+            </div>
+            <div class="col-md-auto d-flex justify-content-end">
+            <select class="clowns form-select" id="clowns">
                 <option value="">Choose</option>
                 ${
                     clowns.map(
@@ -23,12 +28,14 @@ export const Reservations = () => {
                     ).join("")
                 }
             </select>
-
-            <button class="request_delete" id="request--${reservation.id}">Deny</button>
-
+            </div>
+            <div class="col d-flex justify-content-end">
+            <button class="request_delete btn btn-danger" id="request--${reservation.id}">Deny</button>
+            </div>
+            </div>
         </li>`
         }).join("")}
-</ul>`
+</ul></div>`
 
     return html
 }

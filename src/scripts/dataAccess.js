@@ -76,3 +76,13 @@ export const fetchClowns = () => {
 export const getClowns =() => {
     return applicationState.clowns.map(clown => ({...clown}))
 }
+
+export const fetchCompletions = () => {
+    return fetch(`${API}/completions`)
+        .then(response => response.json())
+        .then(
+            (completions) => {
+                applicationState.completions = completions
+            }
+        )
+}

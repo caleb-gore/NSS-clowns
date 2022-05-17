@@ -14,10 +14,10 @@ export const Reservations = () => {
         return `
         <li class="list-group-item">
             <div class="row">
-            <div class="col-md-auto">
+            <div class="col-9">
             ${reservation.parentName} reserved a ${reservation.length} hour appearance on ${reservation.date}
             </div>
-            <div class="col-md-auto d-flex justify-content-end">
+            <div class="col">
             <select class="clowns form-select" id="clowns">
                 <option value="">Choose</option>
                 ${
@@ -29,7 +29,7 @@ export const Reservations = () => {
                 }
             </select>
             </div>
-            <div class="col d-flex justify-content-end">
+            <div class="col">
             <button class="request_delete btn btn-danger" id="request--${reservation.id}">Deny</button>
             </div>
             </div>

@@ -1,9 +1,9 @@
-import { sendRequest } from "./dataAccess.js"
+import { sendRequest } from "./dataAccess.js";
+// ^^ import functions ^^ //
 
-
-/* build HTML for request form */
+// function -> build Request Form HTML -> exported to ButtonsAndLollipop.js //
 export const RequestForm = () => {
-    return ` 
+  return ` 
         <form class="container">
             <div class="field mb-3">
                 <label class="form-label" for="parentName">Parent's Name</label>
@@ -31,34 +31,37 @@ export const RequestForm = () => {
             </div>
             
             <button class="button btn btn-primary" id="submitRequest">Submit Request</button>
-        </form>`
-}
+        </form>`;
+};
 
-/* assign main element to variable */
-const mainContainer = document.querySelector('#container')
+// query selector -> main container //
+const mainContainer = document.querySelector("#container");
 
-mainContainer.addEventListener(
-    'click',
-    clickEvent => {
-        if (clickEvent.target.id === "submitRequest") {
-            const userParentName = document.querySelector("input[name='parentName']").value
-            const userChildName = document.querySelector("input[name='childName']").value
-            const userNumOfChildren = document.querySelector("input[name='numOfChildren']").value
-            const userAddress = document.querySelector("input[name='address']").value
-            const userDate = document.querySelector("input[name='date']").value
-            const userLength = document.querySelector("input[name='length']").value
+// event listener -> 'Submit Request' button //
+mainContainer.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id === "submitRequest") {
+    const userParentName = document.querySelector(
+      "input[name='parentName']"
+    ).value;
+    const userChildName = document.querySelector(
+      "input[name='childName']"
+    ).value;
+    const userNumOfChildren = document.querySelector(
+      "input[name='numOfChildren']"
+    ).value;
+    const userAddress = document.querySelector("input[name='address']").value;
+    const userDate = document.querySelector("input[name='date']").value;
+    const userLength = document.querySelector("input[name='length']").value;
 
-            const dataToSendToAPI = {
-                parentName: userParentName,
-                childName: userChildName,
-                numOfChildren: userNumOfChildren,
-                address: userAddress,
-                date: userDate,
-                length: userLength
-            }
+    const dataToSendToAPI = {
+      parentName: userParentName,
+      childName: userChildName,
+      numOfChildren: userNumOfChildren,
+      address: userAddress,
+      date: userDate,
+      length: userLength,
+    };
 
-            sendRequest(dataToSendToAPI)
-
-        }
-    }
-)
+    sendRequest(dataToSendToAPI);
+  }
+});

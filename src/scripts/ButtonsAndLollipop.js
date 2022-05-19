@@ -1,11 +1,15 @@
-import { RequestForm } from "./RequestForm.js"
-import { Reservations } from "./Reservations.js"
-/* ^^ import functions from modules here ^^ */
+import { RequestForm } from "./RequestForm.js";
+import { Reservations } from "./Reservations.js";
+// ^^ import functions ^^ //
 
-/* build HTML using functions imported from other modules */
+// function -> build HTML for page -> exported to main.js //
 export const ButtonsAndLollipop = () => {
-    return `
+  return `
+    
+    <h1 class="text-center">Buttons and Lollipop</h1>
+    <h3 class="text-center">clowns for hire</h3>
+    
     ${RequestForm()}
     ${Reservations()}
-        `
-}
+        `;
+};
